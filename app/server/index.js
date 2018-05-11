@@ -9,4 +9,7 @@ routes(server)
 // RESOLVING CORS PROBLEM
 cors(server)
 
+// RESOLVING PROBLEMA WITH REQUEST PARAMS
+server.use(restify.plugins.bodyParser())
+
 module.exports = server
