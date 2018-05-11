@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-restify",
+  "version": "1.0.0",
+  "description": "API RESTful feita com Node.js e Restify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinsbicudo/nodejs-restify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinsbicudo/nodejs-restify/issues"
+  },
+  "homepage": "https://github.com/martinsbicudo/nodejs-restify#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "restify": "^7.1.1"
+  }
+}
