@@ -1,3 +1,9 @@
-const victor = 'lala'
+const restify = require('restify')
+  , server = restify.createServer()
 
-module.exports = victor
+server.get('/', (req, res, next) => {
+  res.send('Hello World :)')
+  next()
+})
+
+server.listen('3456')
