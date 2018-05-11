@@ -1,5 +1,4 @@
-const restify = require('restify')
-  , server = restify.createServer()
+const server = require('./server')
 
 server.get('/', (req, res, next) => {
   res.send('Hello World :)')
