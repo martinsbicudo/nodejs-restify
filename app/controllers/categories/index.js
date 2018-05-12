@@ -1,13 +1,11 @@
-const get = require('./get')
-  , getId = require('./getId')
-  , post = require('./post')
-  , put = require('./put')
+const all = require('./all')
+  , save = require('./save')
+  , update = require('./update')
   , del = require('./del')
 
 module.exports = {
-  get,
-  getId,
-  post,
-  put,
+  all,
+  save,
+  update,
   del
 }

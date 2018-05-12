@@ -1,18 +1,16 @@
 const connection = require('../../services')
-  , get = require('./get')
-  , getId = require('./getId')
-  , post = require('./post')
-  , put = require('./put')
+  , all = require('./all')
+  , save = require('./save')
+  , update = require('./update')
   , del = require('./del')
 
 module.exports = () => {
   const Connection = connection()
 
   return {
-    get: () => get(Connection),
-    getId: id => getId(Connection, id),
-    post: data => post(Connection, data),
-    put: (data, id) => put(Connection, data, id),
+    all: () => all(Connection),
+    save: data => save(Connection, data),
+    update: (data, id) => update(Connection, data, id),
     del: id => del(Connection, id)
   }
 }

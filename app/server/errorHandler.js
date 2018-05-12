@@ -1,6 +1,13 @@
 module.exports = (req, res, next) => {
-  req.error = e => {
-    res.send(e)
+  req.try = async Try => {
+    try {
+      res.send(
+        await Try()
+      )
+    } catch (e) {
+      res.send(e)
+    }
   }
+
   next()
 }

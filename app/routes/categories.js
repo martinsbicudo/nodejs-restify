@@ -1,9 +1,9 @@
-const { get, getId, post, put, del } = require('../controllers/categories')
+const { all, save, update, del } = require('../controllers/categories')
 
 module.exports = server => {
-  server.get('/categorias', get)
-  server.get('/categorias/:id', getId)
-  server.post('/categorias', post)
-  server.put('/categorias', put)
+  server.get('/categorias', all)
+  server.get('/categorias/:id', all)
+  server.post('/categorias', save)
+  server.put('/categorias', update)
   server.del('/categorias', del)
 }
