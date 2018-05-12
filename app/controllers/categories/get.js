@@ -7,9 +7,8 @@ module.exports = async (req, res, next) => {
     res.send(
       await get()
     )
-  } catch (error) {
-    res.send({ error })
+    next()
+  } catch (e) {
+    req.error(e)
   }
-
-  next()
 }
