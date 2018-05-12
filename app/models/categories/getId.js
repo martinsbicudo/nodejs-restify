@@ -1,8 +1,8 @@
-module.exports = (Connection, data) =>
+module.exports = (Connection, id) =>
   new Promise((resolve, reject) =>
     Connection
       .then(DB =>
-        DB.query('INSERT INTO categories SET ?', data, e =>
+        DB.query('SELECT * FROM categories WHERE id = ?', [id], (e, data) =>
           e ? reject(e) : resolve(data)
         )
       )

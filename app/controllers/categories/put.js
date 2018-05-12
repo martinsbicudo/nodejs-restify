@@ -1,13 +1,13 @@
 const categories = require('../../models/categories/')
-  , { post } = categories()
+  , { put } = categories()
 
 // GETTING CATEGORIES LIST
 module.exports = (req, res, next) => {
-  const data = req.params
+  const { data, id } = req.params
 
-  console.log(data)
+  console.log(req.params)
 
-  post(data)
+  put(data, id)
     .then(data => res.send(data))
     .catch(e => res.send(e))
 
