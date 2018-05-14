@@ -13,9 +13,10 @@ const mysql = require('mysql')
   , pool = mysql.createPool(config)
 
 // EXPORT
-module.exports = () =>
-  new Promise((resolve, reject) =>
+module.exports = () => {
+  return new Promise((resolve, reject) =>
     pool.getConnection((e, connection) =>
       e ? reject(e) : resolve(connection)
     )
   )
+}

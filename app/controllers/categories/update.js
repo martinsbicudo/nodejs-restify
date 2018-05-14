@@ -1,11 +1,9 @@
-const categories = require('../../models/categories/')
-  , { update } = categories()
-
 // GETTING CATEGORIES LIST
 module.exports = (req, res, next) => {
-  const { data, id } = req.params
+  const { update } = req.models.categories
+    , { data, id } = req.body
 
-  req.try(
+  req.tryDAO(
     () => update(data, id)
   )
 

@@ -1,11 +1,11 @@
 module.exports = (req, res, next) => {
-  req.try = async Try => {
+  req.tryDAO = async (Try, action) => {
     try {
       res.send(
         await Try()
       )
-    } catch (e) {
-      res.send(e)
+    } catch (error) {
+      res.send({ error })
     }
   }
 

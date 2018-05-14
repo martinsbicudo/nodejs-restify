@@ -1,11 +1,9 @@
-const categories = require('../../models/categories/')
-  , { save } = categories()
-
 // GETTING CATEGORIES LIST
 module.exports = async (req, res, next) => {
-  const data = req.params
+  const { save } = req.models.categories
+    , data = req.body
 
-  req.try(
+  req.tryDAO(
     () => save(data)
   )
 
