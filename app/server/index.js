@@ -4,7 +4,6 @@ const restify = require('restify')
   , cors = require('./cors')
   , tryDAO = require('../middlewares/tryDAO')
   , modelsDAO = require('../middlewares/modelsDAO')
-  , queries = require('../middlewares/queries')
 
 // CALLING ROUTES
 routes(server)
@@ -14,9 +13,6 @@ cors(server)
 
 // TRY DAO REQUEST
 server.use(tryDAO)
-
-// GLOBAL QUERIES
-server.use(queries)
 
 // GLOBAL MODELS
 server.use(modelsDAO)

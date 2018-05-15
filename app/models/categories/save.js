@@ -1,10 +1,12 @@
-module.exports = (Connection, data) =>
+module.exports = (Connection, errorHandler, queries, data) =>
   new Promise((resolve, reject) =>
     Connection
-      .then(DB =>
-        DB.query('INSERT INTO categories SET ?', data, e =>
+      .then(DB => {
+        const { save } = queries.categories
+
+        DB.query(save(), [data], e =>
           e ? reject(e) : resolve(data)
         )
-      )
-      .catch(e => reject(e))
+      })
+      .catch(e => errorHandler(e))
   )

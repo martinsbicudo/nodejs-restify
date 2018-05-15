@@ -1,12 +1,12 @@
-module.exports = (Connection, id) =>
-  new Promise((resolve, reject) => {
-    const { all } = Connection.queries.categories
+module.exports = (Connection, errorHandler, queries, id) =>
+  new Promise((resolve, reject) =>
+    Connection
+      .then(DB => {
+        const { all } = queries.categories
 
-    Connection.init
-      .then(DB =>
         DB.query(all(id), [id], (e, data) =>
           e ? reject(e) : resolve(data)
         )
-      )
-      .catch(e => reject(e))
-  })
+      })
+      .catch(e => errorHandler(e))
+  )
