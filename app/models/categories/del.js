@@ -4,8 +4,10 @@ module.exports = (Connection, errorHandler, queries, id) =>
       .then(DB => {
         const { del } = queries.categories
 
-        DB.query(del(), [id], e =>
-          e ? reject(e) : resolve()
+        DB.query(del(), [id], (e, results) =>
+          e ? reject(e) : resolve({
+            affectedRows: results.affectedRows
+          })
         )
       })
       .catch(e => errorHandler(e))

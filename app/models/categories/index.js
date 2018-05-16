@@ -6,6 +6,6 @@ const all = require('./all')
 module.exports = (Connection, errorHandler, queries) => ({
   all: id => all(Connection, errorHandler, queries, id),
   save: data => save(Connection, errorHandler, queries, data),
-  update: (data, id) => update(Connection, errorHandler, queries, data, id),
+  update: (id, data) => update(Connection, errorHandler, queries, id, data),
   del: id => del(Connection, errorHandler, queries, id)
 })

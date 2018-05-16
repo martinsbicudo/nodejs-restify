@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node app/index.js",
     "dev": "./node_modules/.bin/nodemon app/index.js --config nodemon.json",
-    "test": "cross-env NODE_ENV=test ./node_modules/.bin/ava --verbose"
+    "test": "cross-env NODE_ENV=test ./node_modules/.bin/ava --verbose",
+    "test:watch": "npm test --watch"
   },
   "repository": {
     "type": "git",
