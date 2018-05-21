@@ -1,0 +1,39 @@
+{
+  "name": "nodejs-restify",
+  "version": "1.0.0",
+  "description": "API RESTful feita com Node.js e Restify",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app/index.js",
+    "dev": "./node_modules/.bin/nodemon app/index.js --config nodemon.json",
+    "test": "cross-env NODE_ENV=test ./node_modules/.bin/ava --verbose",
+    "test:watch": "npm test --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinsbicudo/nodejs-restify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinsbicudo/nodejs-restify/issues"
+  },
+  "homepage": "https://github.com/martinsbicudo/nodejs-restify#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "cross-env": "^5.1.5",
+    "dotenv": "^5.0.1",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.17.4",
+    "restify": "^7.1.1",
+    "restify-cors-middleware": "^1.1.0"
+  }
+}

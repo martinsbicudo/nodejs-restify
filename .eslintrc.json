@@ -1,0 +1,7 @@
+{
+    "extends": "standard",
+    "rules": {
+      "one-var": 0,
+      "comma-style": 0
+    }
+}
