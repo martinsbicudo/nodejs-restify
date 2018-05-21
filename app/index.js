@@ -1,3 +1,7 @@
-const server = require('./server')
+// ENV CONFIG
+require('dotenv').config()
 
-server.listen('3456')
+const server = require('./server')
+  , port = process.env.SERVER_PORT || '3456'
+
+server.listen(port)
