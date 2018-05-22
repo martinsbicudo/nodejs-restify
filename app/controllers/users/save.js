@@ -1,6 +1,6 @@
-// SAVING NEW CATEGORY
+// SAVING USER
 module.exports = async (req, res, next) => {
-  const { save } = req.models.categories
+  const { save } = req.models.users
     , data = req.body
 
   req.tryDAO(

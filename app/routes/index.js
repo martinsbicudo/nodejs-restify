@@ -1,4 +1,5 @@
 const categories = require('./categories')
+  , users = require('./users')
 
 module.exports = server => {
   // ROOT
@@ -7,6 +8,7 @@ module.exports = server => {
     next()
   })
 
-  // CATEGORIES
+  // STARTING ROUTES
   categories(server)
+  users(server)
 }
