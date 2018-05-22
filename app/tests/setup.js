@@ -7,7 +7,7 @@ module.exports = (table) => {
   // TRUNCATE TABLE before and after
   const truncate = () =>
     Connection
-      .then(async DB => { await DB.query(`TRUNCATE TABLE ${table}`) })
+      .then(DB => DB.query(`TRUNCATE TABLE ${table}`))
       .catch(error => console.error({ error }))
 
   test.beforeEach(t => truncate())

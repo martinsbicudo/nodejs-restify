@@ -9,7 +9,7 @@ module.exports = (Connection, errorHandler, queries) => ({
   save: data => {
     data.password = sha1(data.password)
 
-    save(Connection, errorHandler, queries, data)
+    return save(Connection, errorHandler, queries, data)
   },
   update: (id, password) => update(Connection, errorHandler, queries, id, sha1(password)),
   del: id => del(Connection, errorHandler, queries, id)
